@@ -27,7 +27,6 @@ RUN DEBIAN_FRONTEND=noninteractive \
 USER $USERNAME
 WORKDIR /home/$USERNAME
 
-EXPOSE 8800/TCP
 EXPOSE 8823/TCP
 
 CMD ["altairz80", "mpm-docker"]
