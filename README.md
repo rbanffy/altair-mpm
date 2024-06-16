@@ -56,22 +56,22 @@ Copyright (C) 1982, Digital Research
 0A>
 ```
 
-At this point, you are in the MP/M prompt. It shows the current user number (from 0 to 15) and the currently active drive.
+At this point, you are in the MP/M prompt. It shows the current user number (from 0 to 15) and the currently active drive. Up to four users can connect at the same time, and will automatically be directed to different user areas.
 
 ## Contents of the Docker image
 
-|Drive|Contents|
-|-----|--------|
-|A|System disk|
-|B|Miscellaneous applications|
-|C|Sorcim's SuperCalc 2|
-|D|Ashton and Tate's dBase II|
-|E|MicroPro's WordStar Release 4|
-|F|Microsoft's Multiplan 4|
-|G|Miscellaneous games|
-|H|Borland's Turbo Pascal 3 IDE|
-|I|First hard drive, empty|
-|J|Second hard drive, empty|
+| Drive | Contents                      |
+| ----- | ----------------------------- |
+| A:    | System disk                   |
+| B:    | Miscellaneous applications    |
+| C:    | Sorcim's SuperCalc 2          |
+| D:    | Ashton and Tate's dBase II    |
+| E:    | MicroPro's WordStar Release 4 |
+| F:    | Microsoft's Multiplan 4       |
+| G:    | Miscellaneous games           |
+| H:    | Borland's Turbo Pascal 3 IDE  |
+| I:    | First hard drive, empty       |
+| J:    | Second hard drive, empty      |
 
 All files in the disk images are in user area 0.
 
