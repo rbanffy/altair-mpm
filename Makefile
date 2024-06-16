@@ -1,4 +1,4 @@
-.PHONY: help build upload create_manifest
+.PHONY: help build push_images create_manifest
 .DEFAULT_GOAL := help
 
 SHELL = /bin/sh
