@@ -12,7 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     groupadd --gid $USER_GID $USERNAME && \
     useradd --uid $USER_UID --gid $USER_GID -m $USERNAME && \
     apt update && \
-    # apt upgrade -y && \
+    apt upgrade -y && \
     apt install -y --no-install-recommends simh unzip && \
     cd /home/$USERNAME && \
     # Bring the disk images and simh config into the user's home directory.
