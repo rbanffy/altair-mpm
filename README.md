@@ -4,6 +4,12 @@ Docker image for running an Altair CP/M 2.2 + MP/M 2.1 computer.
 
 ## Basic operation
 
+To start the service locally, run:
+
+```shell
+docker run -p 8823:8823 rbanffy/altair-mpm
+```
+
 When the service comes up, it listens to port 8823. The emulated machine boots under CP/M 2.2. In order to start MP/M, the first user to connect needs to run the MPM.COM program, which loads and starts the MP/M II environment:
 
 ```plain
