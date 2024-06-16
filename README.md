@@ -13,9 +13,6 @@ docker run -p 8823:8823 rbanffy/altair-mpm
 When the service comes up, it listens to port 8823. The emulated machine boots under CP/M 2.2. In order to start MP/M, the first user to connect (running `telnet localhost 8823`) needs to run the MPM.COM program, which loads and starts the MP/M II environment:
 
 ```plain
-Trying 192.168.0.10...
-Connected to 192.168.0.10.
-Escape character is '^]'.
 
 
 Connected to the Altair 8800 (Z80) simulator Serial Input Output SIO device, line 0
