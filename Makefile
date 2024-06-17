@@ -32,12 +32,12 @@ help: ## Displays this message.
 	@python3 -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
 build: ## Builds the Docker images
-	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-amd64 --platform=linux/amd64 --file ./Dockerfile .
-	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-arm64 --platform=linux/arm64 --file ./Dockerfile .
-	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-armv6 --platform=linux/arm/v6 --file ./Dockerfile .
-	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-armv7 --platform=linux/arm/v7 --file ./Dockerfile .
-	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-s390x --platform=linux/s390x --file ./Dockerfile .
-	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-ppc64le --platform=linux/ppc64le --file ./Dockerfile .
+	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-amd64 --platform=linux/amd64 --file ./Dockerfile --progress plain .
+	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-arm64 --platform=linux/arm64 --file ./Dockerfile --progress plain .
+	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-armv6 --platform=linux/arm/v6 --file ./Dockerfile --progress plain .
+	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-armv7 --platform=linux/arm/v7 --file ./Dockerfile --progress plain .
+	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-s390x --platform=linux/s390x --file ./Dockerfile --progress plain .
+	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-ppc64le --platform=linux/ppc64le --file ./Dockerfile --progress plain .
 
 push_images: build ## Uploads the local docker images
 	docker image push ${USER}/altair-mpm:${IMAGE_TAG}-amd64
@@ -50,7 +50,7 @@ push_images: build ## Uploads the local docker images
 create_manifest: push_images ## Uploads the manifest
 	docker manifest create ${USER}/altair-mpm:${IMAGE_TAG} \
 		--amend ${USER}/altair-mpm:${IMAGE_TAG}-amd64 \
-		--amend ${USER}/altair-mpm:${IMAGE_TAG}-amd64 \
+		--amend ${USER}/altair-mpm:${IMAGE_TAG}-arm64 \
 		--amend ${USER}/altair-mpm:${IMAGE_TAG}-armv6 \
 		--amend ${USER}/altair-mpm:${IMAGE_TAG}-armv7 \
 		--amend ${USER}/altair-mpm:${IMAGE_TAG}-s390x \
