@@ -1,4 +1,4 @@
-.PHONY: help build push_images create_manifest
+.PHONY: help build push_images create_manifest build_amd64 build_arm64 build_armv6 build_armv7 build_ppc64le build_s390x
 .DEFAULT_GOAL := help
 
 SHELL = /bin/sh
@@ -31,13 +31,25 @@ help: ## Displays this message.
 	@echo "Please use \`make <target>\` where <target> is one of:"
 	@python3 -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
-build: ## Builds the Docker images
+build_amd64: ## Builds the Docker image for amd64
 	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-amd64 --platform=linux/amd64 --file ./Dockerfile --progress plain .
+
+build_arm64: ## Builds the Docker image for arm64
 	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-arm64 --platform=linux/arm64 --file ./Dockerfile --progress plain .
+
+build_armv6: ## Builds the Docker image for armv6
 	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-armv6 --platform=linux/arm/v6 --file ./Dockerfile --progress plain .
+
+build_armv7: ## Builds the Docker image for armv7
 	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-armv7 --platform=linux/arm/v7 --file ./Dockerfile --progress plain .
+
+build_ppc64le: ## Builds the Docker image for ppc64le
+	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-ppc64le --platform=linux/ppc64le --file ./Dockerfile --progress plain .	
+
+build_s390x: ## Builds the Docker image for s390x
 	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-s390x --platform=linux/s390x --file ./Dockerfile --progress plain .
-	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-ppc64le --platform=linux/ppc64le --file ./Dockerfile --progress plain .
+
+build: build_amd64 build_arm64 build_armv6 build_armv7 build_ppc64le build_s390x ## Builds the Docker images
 
 push_images: build ## Uploads the local docker images
 	docker image push ${USER}/altair-mpm:${IMAGE_TAG}-amd64

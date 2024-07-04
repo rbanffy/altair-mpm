@@ -6,6 +6,8 @@ ARG USERNAME=mpm
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
+ARG TARGETARCH
+
 COPY *.dsk mpm-docker /
 
 RUN DEBIAN_FRONTEND=noninteractive \

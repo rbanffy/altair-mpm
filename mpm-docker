@@ -18,11 +18,13 @@ set cpu z80
 set cpu altairrom
 set cpu banked
 set simh timeroff
-set sio ansi
+set sio all
 ; Allow the machine to sleep (1ms) when serial idles
 set sio 1000
-; When using MP/M, other terminals are on port 8823
+; When using MP/M, terminals are on port 8823
 attach sio 8823
+; For a docker image, we prefer to run headless. 
+; Console will be the first telnet session to connect to 8823.
 ; set console telnet=8800
 boot dsk
 bye
