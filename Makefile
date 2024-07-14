@@ -9,8 +9,6 @@ ARCHITECTURES = amd64 arm64 arm/v6 arm/v7 s390x ppc64le
 BRANCH = $(shell git branch --show-current)
 
 ifeq ($(BRANCH),main)
-	IMAGE_TAG = stable
-else ifeq ($(BRANCH),develop)
 	IMAGE_TAG = latest
 else
 	IMAGE_TAG = $(BRANCH)
@@ -44,7 +42,7 @@ build_armv7: ## Builds the Docker image for armv7
 	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-armv7 --platform=linux/arm/v7 --file ./Dockerfile --progress plain .
 
 build_ppc64le: ## Builds the Docker image for ppc64le
-	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-ppc64le --platform=linux/ppc64le --file ./Dockerfile --progress plain .	
+	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-ppc64le --platform=linux/ppc64le --file ./Dockerfile --progress plain .
 
 build_s390x: ## Builds the Docker image for s390x
 	docker build -t ${USER}/altair-mpm:${IMAGE_TAG}-s390x --platform=linux/s390x --file ./Dockerfile --progress plain .
