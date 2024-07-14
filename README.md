@@ -88,8 +88,10 @@ dd if=/dev/zero bs=1024 count=8192 | tr '\000' '\345' > empty.dsk
 To create an empty 8" floppy image, use:
 
 ```shell
-dd if=/dev/zero bs=137 count=8128 | tr '\000' '\345' > i.dsk
+dd if=/dev/zero bs=137 count=8128 | tr '\000' '\345' > empty.dsk
 ```
+
+These commands fail on macOS.
 
 ## Further Reading
 
