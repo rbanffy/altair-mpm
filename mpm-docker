@@ -1,7 +1,7 @@
 d tracks[0-7] 254
 ; For a period-accurate clock speed
 ; d clock 4000
-attach dsk mpm.dsk
+attach dsk0 mpm.dsk
 attach dsk1 app.dsk
 attach dsk2 supercalc.dsk
 attach dsk3 dbase.dsk
@@ -9,7 +9,7 @@ attach dsk4 wordstar.dsk
 attach dsk5 multiplan.dsk
 attach dsk6 games.dsk
 attach dsk7 tp3.dsk
-attach hdsk i.dsk
+attach hdsk0 i.dsk
 attach hdsk1 j.dsk
 d common b000
 set cpu	64k
@@ -23,7 +23,7 @@ set sio all
 set sio 1000
 ; When using MP/M, terminals are on port 8823
 attach sio 8823
-; For a docker image, we prefer to run headless. 
+; For a docker image, we prefer to run headless.
 ; Console will be the first telnet session to connect to 8823.
 ; set console telnet=8800
 boot dsk
