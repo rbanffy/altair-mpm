@@ -16,7 +16,6 @@ RUN DEBIAN_FRONTEND=noninteractive \
     cd /home/$USERNAME && \
     # Bring the disk images and simh config into the user's home directory.
     mv -v /*.dsk /mpm-docker . && \
-    # Remove unwanted files.
     chown -R $USERNAME:$USERNAME /home/$USERNAME && \
     ls -lha .
 
