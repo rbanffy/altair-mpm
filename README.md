@@ -91,10 +91,14 @@ To create an empty 8" floppy image, use:
 dd if=/dev/zero bs=137 count=8128 | tr '\000' '\345' > empty.dsk
 ```
 
-These commands fail on macOS.
+> :warning: These commands fail to create correct images on macOS.
 
 ## Further Reading
 
 The MP/M user's guide is available from <http://www.gaby.de/cpm/manuals/mpm2ug.pdf>.
 
 Information specific to the Altair Z80 emulator can be found at <http://bitsavers.trailing-edge.com/simh.trailing-edge.com_201206/pdf/altairz80_doc.pdf>.
+
+## Acknowledgements
+
+This wouldn't be possible without the work of Peter Schorn and the contents of his [website](https://schorn.ch/altair_4.php).
