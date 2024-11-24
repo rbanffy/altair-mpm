@@ -102,3 +102,5 @@ Information specific to the Altair Z80 emulator can be found at <http://bitsaver
 ## Acknowledgements
 
 This wouldn't be possible without the work of Peter Schorn and the contents of his [website](https://schorn.ch/altair_4.php).
+
+The Tektronix graphics example (useful for VT230/240/330+ terminals) is based on the [VT330/VT340 Programmer Reference Manual](https://vt100.net/docs/vt3xx-gp/chapter13.html), [Tektronix 4010 and 4010-1 user's manual](https://w140.com/tekwiki/images/c/c2/070-1225-00.pdf) (page 3-8) and the Pascal examples at <https://github.com/rricharz/tek4010-pidp8i/blob/master/Pascal/graph1.ps>
