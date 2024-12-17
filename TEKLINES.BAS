@@ -13,7 +13,7 @@
 130 FOR I = 1 TO 10000: NEXT
 140 PRINT CSI$+"?38l"
 150 END
-1000 REM calculate coordinates for x,y
-1010 REM returns them in xy$
+1000 REM calculate coordinate string for (X,Y)
+1010 REM returns them in XY$
 1020 XY$=CHR$((Y\32) OR 32) + CHR$((Y MOD 32) OR 96) + CHR$((X\32) OR 32) + CHR$((X MOD 32) OR 64)
 1030 RETURN
