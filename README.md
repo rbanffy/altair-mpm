@@ -99,6 +99,10 @@ The MP/M user's guide is available from <http://www.gaby.de/cpm/manuals/mpm2ug.p
 
 Information specific to the Altair Z80 emulator can be found at <http://bitsavers.trailing-edge.com/simh.trailing-edge.com_201206/pdf/altairz80_doc.pdf>.
 
+## What if I want more software?
+
+There is a huge archive at the [*HUMONGOUS\* CP/M Software Archives](http://cpmarchives.classiccmp.org/). There is a trick, however: loading the programs into the Altair image requires you to be running it locally (you can run it using `altairz80 mpm-local` or `altairz80 mpm-docker` and then telnet into the machine). Changes to the .dsk files will be on your local git tree and will be persisted into Docker images you build from it. Doing it with a running Altair inside a container will lose any changes the next time the container is redeployed.
+
 ## Acknowledgements
 
 This wouldn't be possible without the work of Peter Schorn and the contents of his [website](https://schorn.ch/altair_4.php).
