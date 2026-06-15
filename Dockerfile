@@ -1,4 +1,4 @@
-FROM rbanffy/simh-base:latest
+FROM rbanffy/simh-base:develop
 
 LABEL maintainer="Ricardo Bánffy <rbanffy@gmail.com>"
 
